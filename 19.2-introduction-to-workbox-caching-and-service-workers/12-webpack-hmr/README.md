@@ -1,4 +1,4 @@
-# 📖 Add WebPack Development Server to a Project Using Hot Module Replacement (HMR)
+# 🏗️ Add Webpack Development Server to a Project Using Hot Module Replacement (HMR)
 
 Work with a partner to implement the following user story:
 
@@ -10,29 +10,19 @@ Work with a partner to implement the following user story:
 
 * It is done when I have installed `webpack-dev-server` as a `devDependency`.
 
-* It is done when I have added a `dev` command to `package.json` that runs `webpack-dev-server --open`.
-
 * It is done when I have a `webpack.config.js` file in my project that includes the `devServer` property.
 
 * It is done when I have added a `hot` property to the `devServer` object in `webpack.config.js` and set its value to `only`.
 
-* It is done when I have opened `Unsolved/src/index.js` and made the following changes:
+* It is done when I have added a `dev` command to `package.json` that runs `webpack-dev-server --open`.
 
-  * Imported the CSS file from the CSS folder.
+* It is done when I have opened `Unsolved/src/js/index.js` and added logic to accept Hot Module Replacement (HMR), as shown in the documentation.
 
-  * Added logic to accept Hot Module Replacement (HMR), as this is an optional feature.
-
-* It is done when I have modified or added some content to the `style.css` file. For example, I changed the `h1` font weight in the `style.css` file and saved it; and that change is reflected in the browser.
+* It is done when I have opened `Unsolved/src/js/header.js` and updated the code so that the header changes to `orange` instead of `blue` on the button click. 
 
 ## 📝 Notes
 
-* If you encounter any issues with loading your most recent changes, try again in a private/incognito window.
-
-Refer to the documentation:
-
-* [Webpack docs on Hot Module Replacement (HMR)](https://webpack.js.org/guides/hot-module-replacement/#enabling-hmr)
-
-* [Webpack docs on webpack-dev-server](https://webpack.js.org/configuration/dev-server/)
+* If you encounter any issues with loading your most recent changes, refresh the page or try again in a private/incognito window. You may have to refresh a few times!
 
 ## 💡 Hints
 
@@ -47,4 +37,4 @@ If you have completed this activity, work through the following challenge with y
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

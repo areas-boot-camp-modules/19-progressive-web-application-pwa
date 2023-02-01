@@ -1,6 +1,7 @@
 # Module 19: 
 - [19.1: ](#19.1-)
-
+- [19.2: ](#19.2-)
+- [19.3: ](#19.3-)
 ---
 
 ## 19.1: Webpage Performance and Webpack
@@ -105,5 +106,117 @@ plugins: {
 }
 ...
 ```
+
+---
+## 19.2: 
+### Webpack HMR
+- HRM = hot module reloading.
+- Modules get uploaded in browser without a browser refresh.
+- Is this like `nodemon` for the browser.
+- `"dev": "webpack-dev-server --open",`
+
+```
+module.exports = {
+	mode: "development",
+	entry: {
+		index: ".src/index.js",
+	},
+	devServer: {
+		hot: "only",
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: "Hot Module Reloading",
+			template: "./index.html",
+		}),
+	],
+	module: [
+		...
+	],
+	output: {
+		filename: "bundle.js",
+		path: path.resolve(__dirname, "dist"),
+	},
+}
+```
+
+---
+### Client-Server
+- Things are out of order for me! Client-Server was supposed to be last.
+- Fixed.
+- This is using new `client` and `sever` folders to organize our code.
+- Do we use the MVC model, or something else?
+
+---
+### Workbox Service Workers
+- I’m not following.
+- This guy is terrible.
+
+index.js
+```
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker
+	.register("./sw.js")
+	.
+}
+```
+
+---
+## 19.3: 
+### IndexedDB
+ - Similar to local storage, but you can use it to store more.
+ - Local storage is synchronous. IndexedDB is async.
+ - Better performance, especially when there’s a lot of data.
+ - And it has a better data structure.
+ - And of course, data is persistent.
+ - Local storage is ok for small stuff, but indexedDB is better for larger projects.
+- `idb` is a dependency (https://www.npmjs.com/package/idb).
+- `openDB` returns a promise, and therefore lets you do things async.
+- You can see IndexedDB and demo-db under it in the browser (under storage).
+- We’ll use await in next activity.
+
+index.js
+```
+import "./database.js"
+```
+
+database.js
+```
+import { openDB } from "idb"
+
+const initdb = async () =>
+	openDB("demo-db", 1, {
+		upgrade(db) {
+			if (db.objectStoreNames.contains("demo-db")) {
+				console.log("demo-db database already exists")
+				return
+			}
+			db.createObjectStore("demo-db", {
+				keyPath: "id",
+				autoIncrement: true
+			})
+			console.log("demo-db database created)
+		},
+	})
+
+initdb()
+```
+
+---
+
+### IndexedDB and CRUD
+- 
+
+---
+### Manifest
+- 
+
+---
+### Git Hooks
+- 
+
+---
+###  
+- 
 
 ---
