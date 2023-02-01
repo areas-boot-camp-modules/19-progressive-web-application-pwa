@@ -18,14 +18,16 @@ module.exports = () => {
         template: './index.html',
         title: 'TODOs List'
       }),
-
       new GenerateSW(),
       new WebpackPwaManifest({
-        // TODO: Create a manifest.json:
+        // manifest.json
+        name: "Activity 26",
+        short_name: "A26",
+        description: "A PWA for activity 26 that doesn’t suck!",
+        start_url: "./",
+        publicPath: "./",
       }),
-     
     ],
-
     module: {
       rules: [
         {

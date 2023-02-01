@@ -205,18 +205,52 @@ initdb()
 ---
 
 ### IndexedDB and CRUD
-- 
+- Lots to remember.
+
+```
+import { openDB } from "idb"
+
+const initdb = async () =>
+	...
+
+export const postDd = async (content) =>
+	const todosDb = await openDB("todos", 1)
+	const tx = todosDb.transaction("todos", "readwrite")
+	const store = tx.objectStore("todos")
+	const request = store.add({ todo: content })
+	const result = await. request
+	console.log("GET all from the database")
+
+...
+
+initdb()
+```
 
 ---
 ### Manifest
-- 
+- Why do we need “Live Server”? For a `manifest.json` file?
+
+```
+{
+	"name": "",
+	"short_name": "",
+	"description": "",
+	"start_url": "./",
+	"icons": [{},{},{}],
+	"orientation": "",
+	"display": "standalone",
+	"background_color": "",
+	"theme_color": "",
+}
+```
 
 ---
 ### Git Hooks
-- 
+- Sample hooks are in `.git/hooks`.
+- You write Git Hooks in bash.
 
 ---
-###  
+###  Mini-Project
 - 
 
 ---

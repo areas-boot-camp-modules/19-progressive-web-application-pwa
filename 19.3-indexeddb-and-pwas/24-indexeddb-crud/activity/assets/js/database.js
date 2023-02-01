@@ -13,7 +13,7 @@ const initdb = async () =>
   });
 
 export const postDb = async (content) => {
-  console.log('Post to the ase');
+  console.log('Post to the database');
   const todosDb = await openDB('todos', 1);
   const tx = todosDb.transaction('todos', 'readwrite');
   const store = tx.objectStore('todos');
@@ -45,11 +45,11 @@ export const getOneDb = async (id) => {
   return result;
 };
 
-// TODO: Fix the function below:
 export const deleteDb = async (id) => {
   console.log('DELETE from the database', id);
   const todosDb = await openDB('todos', 1);
-  const tx = todosDb.transaction('todos', 'readonly');
+  // Changed "readonly" to "readwrite".
+  const tx = todosDb.transaction('todos', 'readwrite');
   const store = tx.objectStore('todos');
   const request = store.delete(id);
   const result = await request;
@@ -57,11 +57,11 @@ export const deleteDb = async (id) => {
   return result;
 };
 
-// TODO: Fix the function below:
 export const putDb = async (id, content) => {
   console.log('PUT to the database');
   const todosDb = await openDB('todos', 1);
-  const tx = todosDb.transaction('todo', 'readwrite');
+  // Changed "todo" to "todos".
+  const tx = todosDb.transaction('todos', 'readwrite');
   const store = tx.objectStore('todos');
   const request = store.put({ id: id, todo: content });
   const result = await request;

@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 const initdb = async () =>
   // TODO: Add a comment explaining what this method does
-  // Use openDB to create 1 db.
+  // Use openDB to create a db "todos" (version 1).
   openDB('todos', 1, {
     // TODO: Add a comment explaining the functionality of this method:
     // Check to see if the db exists before creating it.
